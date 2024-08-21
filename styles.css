@@ -1,0 +1,389 @@
+:root {
+    --bg-color: #f0f2f5;
+    --text-color: #333;
+    --card-bg: #ffffff;
+    --button-bg: #333;
+    --button-text: #fff;
+    --input-bg: #f8f9fa;
+    --border-color: #e0e0e0;
+    --border-hover-color: #b3b3b3;
+    --button-hover-color: #7d7d7d;
+    --shadow-color: rgba(0, 0, 0, 0.2);
+}
+
+.dark-mode {
+    --bg-color: #191919;
+    --text-color: #ffffff;
+    --card-bg: #404040;
+    --button-bg: #ededed;
+    --button-text: #1a1a1a;
+    --input-bg: #3a3a3a;
+    --border-color: #4a4a4a;
+    --border-hover-color: #7d7d7d;
+    --button-hover-color: #b3b3b3;
+    --shadow-color: rgba(246, 255, 255, 0.1);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: var(--bg-color);
+    padding: 20px;
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.game-container {
+    width: 700px;
+    background-color: var(--card-bg);
+    border-radius: 15px;
+    box-shadow: 0 10px 30px var(--shadow-color);
+    padding: 30px;
+    padding-top: 18px;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.game-area {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    border: 2px solid var(--border-color);
+    margin-bottom: 15px;
+    background-color: var(--bg-color);
+    overflow: hidden;
+    display: flex;
+    align-items: flex-start;
+    border-radius: 10px;
+    transition: border-color 0.3s ease;
+}
+
+.game-area:hover {
+    border-color: var(--border-hover-color);
+}
+
+.score-level-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.score,
+.level {
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--text-color);
+}
+
+.stop-button {
+    width: 20px;
+    height: 20px;
+    background-color: var(--button-bg);
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.7s ease;
+}
+
+.stop-button:active {
+    transform: scale(0.8);
+}
+
+.stop-button:hover {
+    background-color: var(--button-hover-color);
+}
+
+.status-message {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--text-color);
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+#answerBox {
+    padding: 15px;
+    font-size: 16px;
+    width: 100%;
+    margin-bottom: 15px;
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    background-color: var(--input-bg);
+    color: var(--text-color);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#answerBox:hover {
+    border-color: var(--border-hover-color);
+}
+
+#answerBox:focus {
+    border-color: var(--text-color);
+    box-shadow: 0 0 0 2px var(--shadow-color);
+    outline: none;
+}
+
+.settings {
+    display: flex;
+    gap: 25px;
+    margin-bottom: 25px;
+}
+
+.textarea-container {
+    width: 60%;
+    position: relative;
+    overflow: hidden;
+}
+
+#cardDataInput {
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    font-size: 14px;
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    resize: none;
+    background-color: var(--input-bg);
+    color: var(--text-color);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+}
+
+#cardDataInput:hover {
+    border-color: var(--border-hover-color);
+}
+
+#cardDataInput:focus {
+    border-color: var(--text-color);
+    box-shadow: 0 0 0 2px var(--shadow-color);
+    outline: none;
+}
+
+.textarea-container.blurred #cardDataInput {
+    filter: blur(3px);
+}
+
+.textarea-container.blurred:hover #cardDataInput {
+    filter: blur(0);
+}
+
+.customization {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    justify-content: space-between;
+}
+
+.customization label {
+    font-size: 14px;
+    color: var(--text-color);
+    font-weight: 600;
+    flex-shrink: 0;
+    display: inline-block;
+}
+
+.delimiter-setting {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.delimiter-setting label {
+    margin-right: 10px;
+    flex-shrink: 0;
+}
+
+.delimiter-setting input.delimiter {
+    width: 100px;
+}
+
+.delimiter {
+    padding: 8px;
+    font-size: 14px;
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    background-color: var(--input-bg);
+    color: var(--text-color);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.delimiter:hover {
+    border-color: var(--border-hover-color);
+}
+
+.delimiter:focus {
+    border-color: var(--text-color);
+    box-shadow: 0 0 0 2px var(--shadow-color);
+    outline: none;
+}
+
+.customization input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 8px;
+    background: var(--border-color);
+    outline: none;
+    border-radius: 4px;
+    margin: 4px 0;
+    transition: background 0.2s ease-in-out;
+}
+
+.customization input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    background: var(--button-bg);
+    cursor: pointer;
+    border-radius: 50%;
+    box-shadow: 0 0 2px var(--shadow-color), 0 2px 4px var(--shadow-color);
+    transition: background 0.2s ease-in-out, transform 0.1s ease-in-out;
+}
+
+.customization input[type="range"]::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    background: var(--button-bg);
+    cursor: pointer;
+    border-radius: 50%;
+    box-shadow: 0 0 2px var(--shadow-color), 0 2px 4px var(--shadow-color);
+    transition: background 0.2s ease-in-out, transform 0.1s ease-in-out;
+    border: none;
+}
+
+.customization input[type="range"]:hover {
+    background: var(--border-hover-color);
+}
+
+.customization input[type="range"]::-webkit-slider-thumb:hover {
+    background: var(--border-hover-color);
+    transform: scale(1.1);
+}
+
+.customization input[type="range"]::-moz-range-thumb:hover {
+    background: var(--border-hover-color);
+    transform: scale(1.1);
+}
+
+.customization input[type="range"]:active::-webkit-slider-thumb {
+    transform: scale(1.2);
+}
+
+.customization input[type="range"]:active::-moz-range-thumb {
+    transform: scale(1.2);
+}
+
+#startGame {
+    width: 100%;
+    padding: 15px;
+    background-color: var(--button-bg);
+    color: var(--button-text);
+    border: none;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+#startGame:hover {
+    background-color: var(--button-hover-color);
+}
+
+#startGame:active {
+    transform: scale(0.98);
+}
+
+.card {
+    position: absolute;
+    padding: 12px;
+    background-color: var(--card-bg);
+    color: var(--text-color);
+    font-weight: 600;
+    border-radius: 8px;
+    font-size: 14px;
+    text-align: center;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 2px 10px var(--shadow-color);
+    word-wrap: break-word;
+    max-width: 300px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+}
+
+.theme-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+}
+
+#themeToggle {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: none;
+    background-color: var(--button-bg);
+    color: var(--button-text);
+    font-size: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, transform 0.1s;
+}
+
+#themeToggle:hover {
+    transform: scale(1.1);
+}
+
+#themeToggle:active {
+    transform: scale(0.9);
+}
+
+/* Custom scrollbar styles */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--border-color);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: var(--button-bg);
+}
+
+/* Hide scrollbar when not needed */
+.textarea-container {
+    scrollbar-width: thin;
+    scrollbar-color: transparent transparent;
+}
+
+.textarea-container:hover {
+    scrollbar-color: var(--border-color) transparent;
+}
+
+@keyframes fall {
+    from { top: -10%; }
+    to { top: 100%; }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}

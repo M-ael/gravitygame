@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gravity Game</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="theme-toggle">
+        <button id="themeToggle" aria-label="Toggle dark mode">
+            <i class="fas fa-moon"></i>
+        </button>
+    </div>
+    <div class="game-container">
+        <div class="score-level-container">
+            <div class="score" id="score">Score: 0</div>
+            <div id="stopButton" class="stop-button"></div>
+            <div id="level" class="level">Level 1</div>
+        </div>
+        <div id="gameArea" class="game-area"></div>
+        <div id="gameStatus" class="status-message">Please start the game</div>
+        <input type="text" id="answerBox" placeholder="Type your answer and press Enter...">
+        <div class="settings">
+            <div class="textarea-container">
+                <textarea id="cardDataInput" placeholder="Enter card data here..."></textarea>
+            </div>
+            <div class="customization">
+                <div class="delimiter-setting">
+                    <label for="textAnswerDelimiter">Answer Delimiter</label>
+                    <input type="text" id="textAnswerDelimiter" class="delimiter" value=",">
+                </div>
+                <div class="delimiter-setting">
+                    <label for="cardDelimiter">Card Delimiter</label>
+                    <input type="text" id="cardDelimiter" class="delimiter" value="\n">
+                </div>
+                <div class="slider-setting">
+                    <label for="spawnDelay">Spawn Delay (<span id="spawnDelayValue">2500</span> ms)</label>
+                    <input type="range" id="spawnDelay" min="6" max="200" value="50">
+                </div>
+                <div class="slider-setting">
+                    <label for="difficultySlider">Difficulty (<span id="difficultyValue">1</span>)</label>
+                    <input type="range" id="difficultySlider" min="1" max="5" value="1">
+                </div>
+            </div>
+        </div>
+        <button id="startGame">Start Game</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
