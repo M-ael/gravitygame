@@ -3,7 +3,7 @@
     --text-color: #333;
     --card-bg: #ffffff;
     --button-bg: #333;
-    --button-text: #fff;
+    --button-text: #ffffff;
     --input-bg: #f8f9fa;
     --border-color: #e0e0e0;
     --border-hover-color: #b3b3b3;
@@ -12,16 +12,16 @@
 }
 
 .dark-mode {
-    --bg-color: #191919;
+    --bg-color: #25292a;
     --text-color: #ffffff;
-    --card-bg: #404040;
-    --button-bg: #ededed;
-    --button-text: #1a1a1a;
-    --input-bg: #3a3a3a;
+    --card-bg: #1d1f20;
+    --button-bg: #2e3234;
+    --button-text: #ffffff;
+    --input-bg: #202425;
     --border-color: #4a4a4a;
     --border-hover-color: #7d7d7d;
-    --button-hover-color: #b3b3b3;
-    --shadow-color: rgba(246, 255, 255, 0.1);
+    --button-hover-color: #666e73;
+    --shadow-color: rgba(0, 0, 0, 0.2);
 }
 
 * {
