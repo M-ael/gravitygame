@@ -1,3 +1,5 @@
+# Gravity Game
+
 This project is a simple and clean website that runs a game inspired by the quizlet gravity game that was deleted. The purpose of the gravity game is to memorize information.
 
 To play the game, you should:
